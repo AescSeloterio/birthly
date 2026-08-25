@@ -1,0 +1,17 @@
+BIRTHDAY WEBSITE ASSET GUIDE
+
+Recommended folders:
+
+/memories/       photos used for memories and albums
+/albums/         album cover images
+/letters/        optional envelope/letter artwork
+/videos/         birthday video messages (.mp4)
+/background/     optional full-screen background image
+
+Examples:
+/memories/first-date.jpg
+/albums/date-nights.jpg
+/videos/message-from-me.mp4
+/background/ours.jpg
+
+Then update the matching paths in /lib/data.ts.
