@@ -17,7 +17,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Happy Birthday — Our Little World',
+  title: 'Birthday na ni Inday',
   description: 'A birthday website made with love, styled like your favorite player.',
   generator: 'Birthday Website V2',
 }

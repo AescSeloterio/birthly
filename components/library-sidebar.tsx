@@ -8,7 +8,7 @@ const NAV: { id: ViewId; label: string; sub: string; icon: LucideIcon }[] = [
   { id: "home", label: "Home", sub: "Your birthday feed", icon: Home },
   { id: "pictures", label: "Pictures of Us", sub: "Photo albums", icon: ImageIcon },
   { id: "greetings", label: "Greetings", sub: "Video messages", icon: Video },
-  { id: "tracklist", label: "Our Favorite Tracklist", sub: "Memories & jokes", icon: ListMusic },
+  { id: "tracklist", label: "Tracklist", sub: "Memories", icon: ListMusic },
   { id: "letters", label: "Open When Letters", sub: "For the right moment", icon: Mail },
   { id: "timeline", label: "Our Story", sub: "The little timeline", icon: Clock3 },
 ]

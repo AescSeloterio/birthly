@@ -3,6 +3,7 @@ export type SelectedItem = {
   title: string
   subtitle?: string
   image: string
+  photos?: string[]
   text: string
   meta?: string
   video?: string

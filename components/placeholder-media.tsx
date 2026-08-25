@@ -1,9 +1,5 @@
 import { cn } from "@/lib/utils"
 
-/**
- * A clearly-labeled placeholder for photos/covers.
- * Swap this out by dropping the named file into /public and using <img src="/filename" />.
- */
 export function PlaceholderMedia({
   label,
   className,
@@ -13,6 +9,30 @@ export function PlaceholderMedia({
   className?: string
   rounded?: string
 }) {
+  // If label looks like an actual image path, display the image.
+  const isImage =
+    label.startsWith("/") &&
+    /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(label)
+
+  if (isImage) {
+    return (
+      <div
+        className={cn(
+          "relative overflow-hidden",
+          rounded,
+          className,
+        )}
+      >
+        <img
+          src={label}
+          alt=""
+          className="h-full w-full object-cover"
+        />
+      </div>
+    )
+  }
+
+  // Otherwise, keep showing the placeholder.
   return (
     <div
       className={cn(
@@ -31,6 +51,7 @@ export function PlaceholderMedia({
             "repeating-linear-gradient(45deg, #ffb3c6 0, #ffb3c6 1px, transparent 1px, transparent 12px)",
         }}
       />
+
       <span className="relative z-10 px-3 text-center font-mono text-[10px] leading-tight tracking-wide text-muted-foreground/80 break-all">
         {label}
       </span>

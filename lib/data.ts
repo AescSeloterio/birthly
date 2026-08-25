@@ -1,5 +1,5 @@
 // Edit anything in this file to personalize the site.
-// Swap the `image` / `video` strings for real files placed in /public later.
+// All image/video paths are relative to /public.
 
 export const HER_NAME = "Lang!"
 
@@ -14,9 +14,13 @@ export type Memory = {
   meta?: string
 }
 
+export type Album = Memory & {
+  photos: string[]
+}
+
 // HOME — the birthday letter
 export const birthdayLetter = {
-  cover: "placeholder_cover_photo.jpg",
+  cover: "/albums/her/Messenger_creation_2918094B-4B8F-458F-88D9-7D3E5BDB6B18.jpeg",
   tag: "Verified Birthday Girl",
   title: `Happy Birthday, ${HER_NAME}`,
   listeners: "18 naka pwede naka madakpan",
@@ -30,54 +34,135 @@ export const birthdayLetter = {
 }
 
 // PICTURES OF US
-export const albums: Memory[] = [
+// Each album uses a real folder from /public/albums.
+// image = the cover shown on the album card.
+// photos = every photo that appears inside the album.
+export const albums: Album[] = [
   {
     id: "album-date-nights",
     title: "Date Nights",
-    subtitle: "24 photos",
-    image: "placeholder_album_date_nights.jpg",
-    text: "Dim lights, shared desserts, and the way you laugh right before the food arrives. Some of my favorite frames live in this one.",
-    meta: "Album",
+    subtitle: "6 photos",
+    image: "/albums/date/IMG20260621201915.jpg",
+    text: "The food, the walks, the random little stops, and the moments that made an ordinary laag feel like ours.",
+    meta: "Photo Album",
+    photos: [
+      "/albums/date/8fa44ed5-44e4-4db8-8f89-19112406a07e.jpeg",
+      "/albums/date/ba91b65a-f7f5-4e5f-b0de-646d91ee3926.jpeg",
+      "/albums/date/IMG20260621200714.jpg",
+      "/albums/date/IMG20260621201915.jpg",
+      "/albums/date/IMG20260621201916.jpg",
+    ],
   },
   {
     id: "album-random-snaps",
     title: "Random Snaps",
-    subtitle: "58 photos",
-    image: "placeholder_album_random_snaps.jpg",
-    text: "The blurry, unposed, caught-mid-sentence photos. Somehow these are the ones that feel the most like us.",
-    meta: "Album",
+    subtitle: "15 photos",
+    image: "/albums/random/IMG20260720193659.jpg",
+    text: "The blurry, unplanned, caught-mid-sentence photos. Somehow these are the ones that feel the most like us.",
+    meta: "Photo Album",
+    photos: [
+      "/albums/random/IMG20260720193659.jpg",
+      "/albums/random/IMG20260720193700.jpg",
+      "/albums/random/IMG20260720193703.jpg",
+      "/albums/random/IMG20260720193705.jpg",
+      "/albums/random/IMG20260720193708.jpg",
+      "/albums/random/Messenger_creation_0FF375F7-24A3-4AD5-8F56-365CFFEBBEFF.jpeg",
+      "/albums/random/Messenger_creation_12447C76-1813-4922-9DA4-E52F5F4FEB4D.jpeg",
+      "/albums/random/Messenger_creation_2951F05B-AE1E-494F-835B-E2E835DBAE2C.jpeg",
+      "/albums/random/Messenger_creation_3E47B1EC-6474-4D03-99DF-D7AD2F5D6F69.jpeg",
+      "/albums/random/Messenger_creation_6BED2424-FEC3-42E8-B816-54C91E7A6211.jpeg",
+      "/albums/random/Messenger_creation_B3C2513D-E948-424F-9BF4-347A97205AEB.jpeg",
+      "/albums/random/Messenger_creation_D44F68C3-58CD-4EA9-B2E7-CB5424C57AD7.jpeg",
+      "/albums/random/Messenger_creation_F0C2F985-D51D-4319-A5D0-2EFA8C23642B.jpeg",
+      "/albums/random/Messenger_creation_FA1F45C1-B533-42AB-9EB5-F3CDF4F77AB8.jpeg",
+    ],
   },
   {
     id: "album-trips",
-    title: "Little Adventures",
-    subtitle: "31 photos",
-    image: "placeholder_album_trips.jpg",
-    text: "Road trips, wrong turns, and that one sunset we pulled over for. Going anywhere is better with you in the passenger seat.",
-    meta: "Album",
+    title: "Kita Duha",
+    subtitle: "7 photos",
+    image: "/albums/us/Messenger_creation_54AFB004-F0A4-4DB4-AC40-0BAFE75F6518.jpeg",
+    text: "Small trips, school days, walks, and the random places that became part of our story just because we were together.",
+    meta: "Photo Album",
+    photos: [
+      "/albums/us/Messenger_creation_50BBF9D9-986A-49E9-9F86-143AA51A5C0B.jpeg",
+      "/albums/us/Messenger_creation_54AFB004-F0A4-4DB4-AC40-0BAFE75F6518.jpeg",
+      "/albums/us/Messenger_creation_884D6E1C-8FA8-480B-9CA2-E1EE2CD7771F.jpeg",
+      "/albums/us/Messenger_creation_8A4F1245-CFFB-4960-A09F-ABEBA26AA669.jpeg",
+      "/albums/us/Messenger_creation_91C28CD2-9353-4EF8-843F-9A2E3EB3108F.jpeg",
+      "/albums/us/Messenger_creation_18FAA8C1-2708-43AA-AAEB-4BA40666094D.jpeg",
+      "/albums/us/Messenger_creation_9A3D9E94-FBA9-4848-908D-0EA7CC0CEC4D.jpeg",
+      "/albums/date/Messenger_creation_6CE9C9DC-F244-4402-8022-24243696EABC.jpeg",
+    ],
   },
   {
     id: "album-lazy-days",
-    title: "Lazy Days",
-    subtitle: "19 photos",
-    image: "placeholder_album_lazy_days.jpg",
-    text: "Nowhere to be, nothing to do, just us and too many snacks. Proof that my favorite place is wherever you are.",
-    meta: "Album",
+    title: "Ikaw",
+    subtitle: "27 photos",
+    image: "/albums/her/Messenger_creation_330653F4-940D-4C6B-8AD2-C886158C0D20.jpeg",
+    text: "The soft, unplanned pictures of you. No special occasion required — apparently you can make a photo album out of simply being you.",
+    meta: "Photo Album",
+    photos: [
+      "/albums/her/Messenger_creation_10E4E30A-1C8D-4213-B539-B8A22F229455.png",
+      "/albums/her/Messenger_creation_20276058-31FE-4EFF-8D9A-C26939955AA2.png",
+      "/albums/her/Messenger_creation_21D7A5B1-0B93-42D9-B2BF-38662DC4C89C.jpeg",
+      "/albums/her/Messenger_creation_25F705B9-EE65-4BD3-BBB6-A14EAAE2D679.png",
+      "/albums/her/Messenger_creation_2918094B-4B8F-458F-88D9-7D3E5BDB6B18.jpeg",
+      "/albums/her/Messenger_creation_330653F4-940D-4C6B-8AD2-C886158C0D20.jpeg",
+      "/albums/her/Messenger_creation_42D6CFAE-2954-4C52-AB13-30A8E87596F2.jpeg",
+      "/albums/her/Messenger_creation_4DCC471A-59C6-42B8-9AE9-A04D11FAC54D.jpeg",
+      "/albums/her/Messenger_creation_57411BD4-3AF6-4BD1-852F-9A536A4DE036.jpeg",
+      "/albums/her/Messenger_creation_5C8AD3C3-E522-437D-A94E-9028EA46C846.jpeg",
+      "/albums/her/Messenger_creation_62EDF4E5-A7A4-44DA-9554-13E1F197565A.png",
+      "/albums/her/Messenger_creation_648D581F-A3B2-4115-87C9-9DC49F5DF6DB.png",
+      "/albums/her/Messenger_creation_841AD292-EFAE-4892-A155-8AACA57DBA78.jpeg",
+      "/albums/her/Messenger_creation_8DB432AB-AC83-466A-A6AA-FEAC9332E3FA.jpeg",
+      "/albums/her/Messenger_creation_93023AC7-8FDB-42B4-8C38-B38DE1A86900.png",
+      "/albums/her/Messenger_creation_ABFEB899-CFFF-45BB-97B8-7BCBFE22CC61.jpeg",
+      "/albums/her/Messenger_creation_AF2730EF-03BB-431D-99D2-EEB622E12D13.jpeg",
+      "/albums/her/Messenger_creation_B3DA9DDD-0AD5-4DFC-AF61-2E21BDB784EE.jpeg",
+      "/albums/her/Messenger_creation_B426047C-339B-4B61-A928-6965AD9C489E.jpeg",
+      "/albums/her/Messenger_creation_BEA5873C-A25C-40D2-8FBC-E496311438D1.jpeg",
+      "/albums/her/Messenger_creation_CB569A90-C1CC-493E-B537-071D4DFDD450.jpeg",
+      "/albums/her/Messenger_creation_CCC0C081-9819-4BB7-B223-665496C72200.png",
+      "/albums/her/Messenger_creation_DA5B9B61-238C-46E6-9201-BB0BC329D220.jpeg",
+      "/albums/her/Messenger_creation_DED33119-5368-499C-A782-620D8947B1B9.jpeg",
+      "/albums/her/Messenger_creation_DF9D7C77-EC5F-4C85-B5BC-6C5575028DCC.jpeg",
+      "/albums/her/Messenger_creation_EF46DD31-B9A2-47C2-A81F-9DBE8AB875AD.jpeg",
+      "/albums/her/Messenger_creation_F63903DD-5F52-4532-B79D-0665A44CA298.png",
+    ],
   },
   {
     id: "album-us",
-    title: "Just Us",
-    subtitle: "40 photos",
-    image: "placeholder_album_just_us.jpg",
-    text: "No occasion needed. This is the album I open when I miss you and you're only in the next room.",
-    meta: "Album",
+    title: "Ibog ka ani?",
+    subtitle: "4 photos",
+    image: "/albums/ako/IMG20260824165313.jpg",
+    text: "A few pictures from the 'ako' folder that feel like the little behind-the-scenes pieces of our story — the person on the other side of these memories.",
+    meta: "Photo Album",
+    photos: [
+      "/albums/ako/IMG20260802170556.jpg",
+      "/albums/ako/IMG20260805182837.jpg",
+      "/albums/ako/IMG20260824165313.jpg",
+      "/albums/ako/Messenger_creation_582992BA-63AE-413E-8759-CD142054EC2A.jpeg",
+    ],
   },
   {
     id: "album-firsts",
     title: "All Our Firsts",
-    subtitle: "12 photos",
-    image: "placeholder_album_firsts.jpg",
-    text: "First coffee, first trip, first 'I love you.' Every first with you turned into a favorite.",
-    meta: "Album",
+    subtitle: "8 photos",
+    image: "/albums/prom/Messenger_creation_15A51E2B-C9AD-4799-A833-D7F875713BBD.jpeg",
+    text: "The milestone pictures — birthdays, prom, and the moments that deserve a permanent little place in our story.",
+    meta: "Photo Album",
+    photos: [
+      "/albums/birthday/Messenger_creation_6ECFB8AC-BDCB-4C0D-8241-6C2A97BD4985.jpeg",
+      "/albums/birthday/Messenger_creation_ACE63557-A703-4A37-85A5-E01AB60F738E.jpeg",
+      "/albums/birthday/Messenger_creation_EA809FD4-8192-4655-963C-9CC80A6831E4.jpeg",
+      "/albums/prom/f0e2d418-d118-439c-9cf0-68e093f6a114.jpeg",
+      "/albums/prom/Messenger_creation_15A51E2B-C9AD-4799-A833-D7F875713BBD.jpeg",
+      "/albums/prom/Messenger_creation_436C4B0F-E025-4E3B-94C9-13118DAD6864.png",
+      "/albums/prom/Messenger_creation_85BB3EE0-1F58-4BAA-8AFD-20636D5B934A.png",
+      "/albums/prom/Messenger_creation_AAACAA5A-7495-450B-8B1B-B3DEC86A9033.jpeg",
+    ],
   },
 ]
 
@@ -115,67 +200,72 @@ export const greetings: (Memory & { video: string; duration: string })[] = [
   },
 ]
 
-// OUR FAVORITE TRACKLIST (inside jokes & memories)
-export const tracklist: (Memory & { date: string; category: string; length: string })[] = [
+// OUR FAVORITE TRACKLIST
+export type Track = Memory & {
+  chapter: string
+  vibe: string
+}
+
+export const tracklist: Track[] = [
   {
     id: "trk-1",
-    title: "The Night We Talked Till 4AM",
-    subtitle: "",
-    image: "placeholder_track_1.jpg",
-    date: "Our very first",
-    category: "Core Memory",
-    length: "∞",
-    text: "Neither of us wanted to hang up. That was the night I knew this was going to be something.",
+    title: "Our Love Song",
+    subtitle: "My Boo",
+    image: "/Usher_-_Confessions_album_cover.png",
+    chapter: "The song",
+    vibe: "∞",
+    text: "Ang love song natong duha nga ang lyric kay murag para sa atoa nga naa diri gikan ang atoang call sign sauna.",
+    meta: "Our soundtrack",
   },
   {
     id: "trk-2",
-    title: "'That's What She Said' — Every Single Time",
-    subtitle: "",
-    image: "placeholder_track_2.jpg",
-    date: "Ongoing",
-    category: "Inside Joke",
-    length: "5:55",
-    text: "You do it at the worst possible moments and I pretend to be annoyed. I am not annoyed. I love it.",
+    title: "Late Night",
+    subtitle: "Date",
+    image: "/albums/date/IMG20260621201915.jpg",
+    chapter: "Date nights",
+    vibe: "No budget",
+    text: "Mga laag nga naay kwarta ug walay kwarta. Bahala nag walay kwarta kung mo laag, salig nalang tas atoang tiil kung asa ta dal-on.",
+    meta: "Our soundtrack",
   },
   {
     id: "trk-3",
-    title: "The Great Pizza Topping Debate",
-    subtitle: "",
-    image: "placeholder_track_3.jpg",
-    date: "Still unresolved",
-    category: "Inside Joke",
-    length: "3:21",
-    text: "You are wrong about pineapple. I will love you anyway. This is a lifelong commitment.",
+    title: "17th Birthday",
+    subtitle: "Happy birthday ate",
+    image: "/albums/birthday/Messenger_creation_ACE63557-A703-4A37-85A5-E01AB60F738E.jpeg",
+    chapter: "Milestone",
+    vibe: "Sheesh",
+    text: "17th birthday nimo nga akoa gi tiguman para maka palit ug cake para imohang birthday kay happy. Yehey.",
+    meta: "Our soundtrack",
   },
   {
     id: "trk-4",
-    title: "When You Fell Asleep On My Shoulder",
-    subtitle: "",
-    image: "placeholder_track_4.jpg",
-    date: "A quiet afternoon",
-    category: "Core Memory",
-    length: "2:08",
-    text: "I didn't move for an hour. My arm went numb. Best hour of that whole month, honestly.",
+    title: "Sigma",
+    subtitle: "Sigma",
+    image: "/albums/random/IMG20260720193708.jpg",
+    chapter: "Inside joke",
+    vibe: "Sigma",
+    text: "Sigma.",
+    meta: "Our soundtrack",
   },
   {
     id: "trk-5",
-    title: "Our Terrible, Perfect Karaoke Duet",
-    subtitle: "",
-    image: "placeholder_track_5.jpg",
-    date: "Never forget",
-    category: "Chaos",
-    length: "4:30",
-    text: "We were awful. Everyone left. We stayed. Ten out of ten, would sing off-key with you again.",
+    title: "Natug",
+    subtitle: "Giduka",
+    image: "/albums/us/Messenger_creation_9A3D9E94-FBA9-4848-908D-0EA7CC0CEC4D.jpeg",
+    chapter: "Sleepy us",
+    vibe: "ZzZ",
+    text: "Gi duka ta duha nya gipicturan ta. One of my favorite pictures nato duha. Naka matching surname pagid.",
+    meta: "Our soundtrack",
   },
   {
     id: "trk-6",
-    title: "The Look You Give Me Across A Room",
-    subtitle: "",
-    image: "placeholder_track_6.jpg",
-    date: "Every time",
-    category: "Core Memory",
-    length: "0:04",
-    text: "Four seconds. Every time. It still gets me. Please never stop doing that.",
+    title: "Prom",
+    subtitle: "2/2",
+    image: "/albums/prom/Messenger_creation_15A51E2B-C9AD-4799-A833-D7F875713BBD.jpeg",
+    chapter: "Big night",
+    vibe: "2/2",
+    text: "Grade 11 ug Grade 12 ikaw ra ang na partner sa prom. Hakot tanan prom sa senior high school nga ikaw ra ang partner.",
+    meta: "Our soundtrack",
   },
 ]
 
@@ -217,10 +307,34 @@ export const letters: Memory[] = [
 
 // OUR STORY — visual relationship timeline
 export const timeline = [
-  { id: "time-beginning", date: "The beginning", title: "The day our story started", text: "Replace this with the exact moment you first met, first talked, or first realized something special was happening.", image: "placeholder_timeline_1.jpg" },
-  { id: "time-first-date", date: "Our first date", title: "A day I still replay", text: "Add the place, the little details, and the funny thing that happened that only the two of you remember.", image: "placeholder_timeline_2.jpg" },
-  { id: "time-favorite", date: "A favorite memory", title: "One of my favorite versions of us", text: "This is where you can tell the story behind one photo that means more than it looks like it should.", image: "placeholder_timeline_3.jpg" },
-  { id: "time-today", date: "Today", title: "And somehow, here we are", text: "The best part isn't one memory. It's getting to keep making them with you.", image: "placeholder_timeline_4.jpg" },
+  {
+    id: "time-beginning",
+    date: "The beginning",
+    title: "The day our story started",
+    text: "It all started back when we were in Grade 10. It was our very first time being in a relationship, and we were both still figuring things out as we went—and that's where our story officially began.",
+    image: "/albums/us/Messenger_creation_50BBF9D9-986A-49E9-9F86-143AA51A5C0B.jpeg",
+  },
+  {
+    id: "time-rewind",
+    date: "Rewind",
+    title: "Everything felt right again after this day",
+    text: "Taking time apart was hard, but choosing to come back together was easily the best call we made.",
+    image: "/albums/date/8fa44ed5-44e4-4db8-8f89-19112406a07e.jpeg",
+  },
+  {
+    id: "time-prom",
+    date: "A favorite memory",
+    title: "Our Prom",
+    text: "Our prom. Our dance. Still one of my favorite days with you.",
+    image: "/albums/prom/Messenger_creation_15A51E2B-C9AD-4799-A833-D7F875713BBD.jpeg",
+  },
+  {
+    id: "time-today",
+    date: "Today",
+    title: "Us now",
+    text: "The best part isn't one memory. It's getting to keep making them with you.",
+    image: "/albums/us/Messenger_creation_884D6E1C-8FA8-480B-9CA2-E1EE2CD7771F.jpeg",
+  },
 ]
 
 // SHUFFLE — random reasons
